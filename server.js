@@ -27,11 +27,11 @@ app.use('/', authRoute);
 
 // Set up a route for index.html.
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + 'index.html'));
+    res.sendFile(path.join('index.html'));
 });
 
 app.get('lfc/dataentry', function(req, res) {
-    res.sendFile(path.join(__dirname + 'dataentry.html'));
+    res.sendFile(path.join('dataentry.html'));
 });
 
 
