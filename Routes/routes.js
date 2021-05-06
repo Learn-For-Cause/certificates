@@ -27,7 +27,6 @@ router.post('/getCertificate', async(req, res) => {
 
 });
 
-
 //route to post user details to db
 router.post('/certificate', async(req, res) => {
     const record = new DB.certificate({
@@ -50,6 +49,12 @@ router.post('/certificate', async(req, res) => {
         }
     });
 
+});
+
+
+router.get('/lfc/dataentry', function(req, res) {
+    // res.sendFile(path('dataentry.html'));
+    return res.render('certificates', { db_data: "first", message: "" });
 });
 
 

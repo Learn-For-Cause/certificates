@@ -30,11 +30,6 @@ app.get('/', function(req, res) {
     res.sendFile(path.join('index.html'));
 });
 
-app.get('lfc/dataentry', function(req, res) {
-    res.sendFile(path.join('dataentry.html'));
-});
-
-
 // Start the server.
 const startApp = async() => {
     try {
