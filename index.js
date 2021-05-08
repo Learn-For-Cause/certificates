@@ -35,20 +35,21 @@ const startApp = async() => {
     try {
         // Connection With DB
         await mongoose.connect(
-            process.env.DB_CONNECT, {
+            process.env.MONGODB_URI, {
                 useUnifiedTopology: true,
                 useNewUrlParser: true
             }
         );
 
         success({
-            message: `Successfully connected with the Database \n${process.env.DB_CONNECT}`,
+            message: `Successfully connected with the Database \n${process.env.MONGODB_URI}`,
             badge: true
         });
 
-        // Start Listenting for the server on PORT
-        app.listen(process.env.PORT, () =>
-            success({ message: `Server started on PORT ${process.env.PORT}`, badge: true })
+        const port = process.env.PORT || 3000
+            // Start Listenting for the server on PORT
+        app.listen(port, () =>
+            success({ message: `Server started on PORT ${port}`, badge: true })
         );
     } catch (err) {
         error({
