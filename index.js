@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Set the front-end folder to serve public assets.
-app.use(express.static('static'));
+app.use(express.static('public'));
 
 //set route middleware
 // app.use('/', authRoute);
@@ -104,7 +104,7 @@ const startApp = async() => {
             badge: true
         });
 
-        const port = process.env.PORT || 8080
+        const port = process.env.PORT || 5000
             // Start Listenting for the server on PORT
         app.listen(port, () =>
             success({ message: `Server started on PORT ${port}`, badge: true })
