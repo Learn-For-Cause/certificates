@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Set the front-end folder to serve public assets.
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 //set route middleware
 // app.use('/', authRoute);
@@ -85,7 +85,7 @@ app.get('/lfc/dataentry', function(req, res) {
 
 // Set up a route for index.html.
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + 'index.html'));
+    res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
 // Start the server.
