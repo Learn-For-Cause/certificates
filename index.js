@@ -46,9 +46,10 @@ const startApp = async() => {
             badge: true
         });
 
+const port = process.env.PORT || 3000;
         // Start Listenting for the server on PORT
-        app.listen(process.env.PORT, () =>
-            success({ message: `Server started on PORT ${process.env.PORT}`, badge: true })
+        app.listen(port, () =>
+            success({ message: `Server started on PORT ${port}`, badge: true })
         );
     } catch (err) {
         error({
