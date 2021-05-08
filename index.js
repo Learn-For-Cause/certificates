@@ -79,7 +79,7 @@ app.post('/certificate', async(req, res) => {
 
 app.get('/lfc/dataentry', function(req, res) {
     // res.sendFile(path('dataentry.html'));
-    return res.render('certificates', { db_data: "first", message: "" });
+    res.sendFile(path.join(__dirname + '/views/dataentry.html'));
 });
 
 
